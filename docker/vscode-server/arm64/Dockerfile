@@ -13,7 +13,9 @@ RUN wget https://aka.ms/vscode-server-launcher/aarch64-unknown-linux-gnu \
  && mv aarch64-unknown-linux-gnu /usr/local/lib/vscode-server/ \
  && ln -s /usr/local/lib/vscode-server/aarch64-unknown-linux-gnu /usr/local/bin/vscode-server
 
-CMD vscode-server
+COPY --chmod=755 start.sh /workspace/
+
+CMD ["./start.sh"]
 # && code-server \
 #  --install-extension ms-python.python \
 #  --install-extension ms-ceintl.vscode-language-pack-ja

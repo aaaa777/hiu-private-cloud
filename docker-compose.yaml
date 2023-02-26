@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  devenv:
+    image: logiteca7/vscode-server
+    environment:
+      - REPO_URL=https://github.com/aaaa777/hiu-private-cloud.git
+    volumes:
+      - "vscode-cli:/root/.vscode-cli"
+
+volumes:
+  vscode-cli:
+
